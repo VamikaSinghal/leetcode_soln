@@ -51,4 +51,23 @@ class Solution(object):
         return num
 
 
-        
+#Given a binary array nums, return the maximum number of consecutive 1's in the array.
+
+class Solution(object):
+    def findMaxConsecutiveOnes(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        max=0
+        c=0
+        for n in nums:
+            if n==1:
+                c+=1
+                if c>max:
+                    max = c
+            else:
+                if c>max:
+                    max = c
+                c=0
+        return max
