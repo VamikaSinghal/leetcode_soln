@@ -29,6 +29,24 @@ class Solution(object):
         """
         words = s.split()
         return len(words[-1])
+        
 #28. Find the Index of the First Occurrence in a String
 #Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+class Solution(object):
+    def strStr(self, haystack, needle):
+        """
+        :type haystack: str
+        :type needle: str
+        :rtype: int
+        """
+        if (haystack==needle):
+            return 0
+        n,m = len(needle),len(haystack)
+        hay=haystack[0:n]
 
+        for i in range(n,m+1):
+            if hay==needle:
+                return i-n
+            if i<m: 
+                hay = hay[1:]+haystack[i]
+        return -1
